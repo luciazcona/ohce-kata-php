@@ -6,9 +6,12 @@ class Ohce
 {
     function process(string $word): string
     {
-        return strrev($word);
+        $reversed = strrev($word);
+        if ($word === $reversed) {
+            return "$reversed\n¡Bonita palabra!";
+        }
+
+        return $reversed;
     }
-
-
 
 }

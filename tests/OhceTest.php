@@ -18,6 +18,16 @@ class OhceTest extends TestCase
         $this->assertEquals("aloh", $result);
     }
 
+    /**
+     * @test
+     **/
+    public function givenOneWordAndReturnsSameWord(): void
+    {
+        $ohce = new Ohce();
+        $result = $ohce->process("oto");
+
+        $this->assertEquals("oto\n¡Bonita palabra!", $result);
+    }
 
 
 }
