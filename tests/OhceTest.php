@@ -9,25 +9,15 @@ class OhceTest extends TestCase
 {
     /**
      * @test
-     */
-    public function shouldAddTwoArguments()
+     **/
+    public function givenOneWordReturnTheReverseEchoing(): void
     {
-        $calculator = new Ohce();
+        $ohce = new Ohce();
+        $result = $ohce->process("hola");
 
-        $result = $calculator->add(1, 2);
-
-        $this->assertEquals(3, $result);
+        $this->assertEquals("aloh", $result);
     }
 
-    /**
-     * @test
-     */
-    public function shouldMultiplyTwoArguments()
-    {
-        $calculator = new Ohce();
 
-        $result = $calculator->multiply(1, 2);
 
-        $this->assertEquals(2, $result);
-    }
 }

@@ -4,13 +4,11 @@ namespace Deg540\DockerPHPBoilerplate;
 
 class Ohce
 {
-    function add(int $number1, int $number2): int
+    function process(string $word): string
     {
-        return 0;
+        return strrev($word);
     }
 
-    function multiply(int $number1, int $number2): int
-    {
-        return 0;
-    }
+
+
 }
