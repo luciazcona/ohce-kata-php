@@ -21,7 +21,7 @@ class OhceTest extends TestCase
      **/
     public function givenOneWordReturnTheReverseEchoing(): void
     {
-        $this->assertEquals("aloh", $this->ohce->process("hola"));
+        $this->assertEquals("aloh", $this->ohce->process("Pedro", "hola"));
     }
 
     /**
@@ -29,7 +29,7 @@ class OhceTest extends TestCase
      **/
     public function givenOneWordAndReturnsSameWord(): void
     {
-        $result = $this->ohce->process("oto");
+        $result = $this->ohce->process("Pedro", "oto");
 
         $this->assertEquals("oto\n¡Bonita palabra!", $result);
     }
@@ -63,6 +63,6 @@ class OhceTest extends TestCase
      **/
     public function givenStopReturnsAdiosYourName(): void
     {
-        $this->assertEquals("¡Adios Pedro!", $this->ohce->answer("Pedro", "Stop!"));
+        $this->assertEquals("¡Adios Pedro!", $this->ohce->process("Pedro", "Stop!"));
     }
 }
