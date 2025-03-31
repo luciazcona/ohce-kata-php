@@ -28,4 +28,12 @@ class Ohce
         }
     }
 
+    public function answer(string $name, string $word)
+    {
+        if ($word === "Stop!") {
+            return "¡Adios {$name}!";
+        }
+        return strrev($word);
+    }
+
 }
