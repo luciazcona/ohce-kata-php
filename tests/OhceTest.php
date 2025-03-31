@@ -7,15 +7,21 @@ use PHPUnit\Framework\TestCase;
 
 class OhceTest extends TestCase
 {
+    private Ohce $ohce;
+    protected function setUp(): void
+    {
+        parent::setUp();
+
+        $this->ohce = new Ohce();
+    }
+
+
     /**
      * @test
      **/
     public function givenOneWordReturnTheReverseEchoing(): void
     {
-        $ohce = new Ohce();
-        $result = $ohce->process("hola");
-
-        $this->assertEquals("aloh", $result);
+        $this->assertEquals("aloh", $this->ohce->process("hola"));
     }
 
     /**
@@ -23,8 +29,7 @@ class OhceTest extends TestCase
      **/
     public function givenOneWordAndReturnsSameWord(): void
     {
-        $ohce = new Ohce();
-        $result = $ohce->process("oto");
+        $result = $this->ohce->process("oto");
 
         $this->assertEquals("oto\n¡Bonita palabra!", $result);
     }
@@ -32,13 +37,25 @@ class OhceTest extends TestCase
     /**
      * @test
      **/
-    public function givenOneNameAndTheHourReturnsGreet(): void
+    public function givenOneNameAndTheHourReturnsBuenosDias(): void
     {
-        $ohce = new Ohce();
+        $this->assertEquals("¡Buenos días Pedro!", $this->ohce->greet("Pedro", 7));
+    }
 
-        $result = $ohce->greet("Pedro", 7);
+    /**
+     * @test
+     **/
+    public function givenOneNameAndTheHourReturnsBuenasTardes(): void
+    {
+        $this->assertEquals("¡Buenas tardes Pedro!", $this->ohce->greet("Pedro", 15));
+    }
 
-        $this->assertEquals("¡Buenos días Pedro!", $result);
+    /**
+     * @test
+     **/
+    public function givenOneNameAndTheHourReturnsBuenasNoches(): void
+    {
+        $this->assertEquals("¡Buenas noches Pedro!", $this->ohce->greet("Pedro", 22));
     }
 
 
