@@ -2,17 +2,17 @@
 
 namespace Deg540\DockerPHPBoilerplate\Test;
 
-use Deg540\DockerPHPBoilerplate\Calculator;
+use Deg540\DockerPHPBoilerplate\Ohce;
 use PHPUnit\Framework\TestCase;
 
-class CalculatorTest extends TestCase
+class OhceTest extends TestCase
 {
     /**
      * @test
      */
     public function shouldAddTwoArguments()
     {
-        $calculator = new Calculator();
+        $calculator = new Ohce();
 
         $result = $calculator->add(1, 2);
 
@@ -24,7 +24,7 @@ class CalculatorTest extends TestCase
      */
     public function shouldMultiplyTwoArguments()
     {
-        $calculator = new Calculator();
+        $calculator = new Ohce();
 
         $result = $calculator->multiply(1, 2);
 

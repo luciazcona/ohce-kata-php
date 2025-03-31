@@ -2,7 +2,7 @@
 
 namespace Deg540\DockerPHPBoilerplate;
 
-class Calculator
+class Ohce
 {
     function add(int $number1, int $number2): int
     {
